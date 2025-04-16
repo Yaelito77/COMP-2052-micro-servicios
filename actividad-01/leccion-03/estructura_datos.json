@@ -1,0 +1,31 @@
+{
+    "usuarios": [
+      {
+        "id": 1,
+        "nombre": "Saul Mendez Pereira",
+        "correo": "Saulqueseyo@gmail.com"
+      },
+      {
+        "id": 2,
+        "nombre": "Janiel Rivera",
+        "correo": "Janielqueseyo@gmail.com"
+      }
+    ],
+    "productos": [
+      {
+        "id": 101,
+        "nombre": "Nvidia GeForece RTX 5070",
+        "precio": 850.00,
+        "stock": 5,
+        "descripcion": "La Nvidia GeForce RTX 5070 cuenta con 6,144 núcleos CUDA, 12 GB de memoria GDDR7 y una interfaz de 192 bits, ofreciendo un ancho de banda de 672 GB/s. Funciona con un TDP de 250 W, soporte para PCIe 5.0, y salidas HDMI 2.1b y DisplayPort 2.1b, ideal para gaming a 1440p y 4K con tecnologías como ray tracing y DLSS 3."
+      },
+      {
+        "id": 102,
+        "nombre": "AMD Ryzen 9 7900x",
+        "precio": 349.99,
+        "stock": 20,
+        "descripcion": "El AMD Ryzen 9 7900X es un procesador de alto rendimiento con 12 núcleos y 24 hilos, basado en la arquitectura Zen 4 y fabricado en un proceso de 5 nm. Opera a una frecuencia base de 4.7 GHz y alcanza hasta 5.6 GHz en modo boost, ofreciendo un excelente desempeño en tareas exigentes como gaming, creación de contenido y productividad."
+      }
+    ]
+  }
+  
