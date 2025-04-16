@@ -10,7 +10,7 @@ usuarios = []
 def info():
     return jsonify({
         "app": "Gestión de Usuarios",
-        "autor": "Tu Nombre",
+        "nombre": "Yael Maldonado",
         "endpoints": ["/info", "/crear_usuario", "/usuarios"]
     })
 
