@@ -4,13 +4,13 @@ app = Flask(__name__)
 
 # Datos simulados
 productos = [
-    {"id": 1, "nombre": "Laptop", "precio": 1000},
-    {"id": 2, "nombre": "Mouse", "precio": 25}
+    {"id": 1, "nombre": "RTX 5070", "precio": 850.99},
+    {"id": 2, "nombre": "Ryzen 9 7900x", "precio": 349.99}
 ]
 
 usuarios = [
-    {"id": 1, "nombre": "Ana"},
-    {"id": 2, "nombre": "Luis"}
+    {"id": 1, "nombre": "Saul"},
+    {"id": 2, "nombre": "Janiel"}
 ]
 
 @app.route("/")
