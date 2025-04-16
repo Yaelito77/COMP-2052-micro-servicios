@@ -1,0 +1,17 @@
+### Obtener información general del sistema
+GET http://localhost:5000/info
+Content-Type: application/json
+
+
+### Crear usuario (POST)
+POST http://localhost:5000/crear_usuario
+Content-Type: application/json
+
+{
+  "nombre": "Yael",
+  "correo": "Yaelqueseyo@gmail.com"
+}
+
+### Obtener la lista de usuarios creados
+GET http://localhost:5000/usuarios
+Content-Type: application/json
