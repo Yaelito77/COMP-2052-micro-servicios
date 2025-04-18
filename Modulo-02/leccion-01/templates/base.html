@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block titulo %}Mi App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+
     <h1>Mi Aplicación Flask</h1>
     <nav>
         <a href="/">Inicio</a> |
@@ -15,5 +17,6 @@
     <div>
         {% block contenido %}{% endblock %}
     </div>
+    
 </body>
 </html>
