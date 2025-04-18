@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block titulo %}Registro de Usuario{% endblock %}
+
+{% block contenido %}
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <p>
+            {{ form.nombre.label }}<br>
+            {{ form.nombre(size=32) }}<br>
+            {% for error in form.nombre.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.correo.label }}<br>
+            {{ form.correo(size=32) }}<br>
+            {% for error in form.correo.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.contrasena.label }}<br>
+            {{ form.contrasena(size=32) }}<br>
+            {% for error in form.contrasena.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+        </p>
+
+        <p>{{ form.enviar() }}</p>
+    </form>
+{% endblock %}
