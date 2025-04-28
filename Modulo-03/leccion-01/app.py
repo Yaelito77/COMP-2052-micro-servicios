@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, request, redirect, url_for
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -20,8 +20,8 @@ class User(UserMixin):
 
 # Base de datos simulada
 users = {
-    "Saul": User(1, "Saul", generate_password_hash("1234"), "admin"),
-    "Janiel": User(2, "Janiel", generate_password_hash("abcd"), "user")
+    "Yael": User(1, "Yael", generate_password_hash("Yaelleay"), "admin"),
+    "Jamal": User(2, "Jamal", generate_password_hash("Yamallamay"), "user")
 }
 
 # Cargar usuario
@@ -35,7 +35,20 @@ def load_user(user_id):
 # Ruta de inicio
 @app.route('/')
 def index():
-    return "Bienvenido a mi aplicación. <a href='/login'>Iniciar sesión</a>"
+    return '''
+        <html>
+        <head>
+            <link rel="stylesheet" href="/static/css/style.css">
+            <title>Inicio</title>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Bienvenido a mi aplicación</h1>
+                <a href="/login" class="boton">Iniciar sesión</a>
+            </div>
+        </body>
+        </html>
+    '''
 
 # Ruta de login
 @app.route('/login', methods=['GET', 'POST'])
@@ -52,25 +65,59 @@ def login():
             return "Usuario o contraseña incorrectos. <a href='/login'>Intentar de nuevo</a>"
 
     return '''
-        <form method='post'>
-            Usuario: <input type='text' name='username'><br>
-            Contraseña: <input type='password' name='password'><br>
-            <input type='submit' value='Iniciar sesión'>
-        </form>
+        <html>
+        <head>
+            <link rel="stylesheet" href="/static/css/style.css">
+            <title>Login</title>
+        </head>
+        <body>
+            <form method="post">
+                Usuario: <input type="text" name="username"><br>
+                Contraseña: <input type="password" name="password"><br>
+                <input type="submit" value="Iniciar sesión">
+            </form>
+        </body>
+        </html>
     '''
 
 # Ruta protegida
 @app.route('/dashboard')
 @login_required
 def dashboard():
-    return f"Hola, {current_user.username}! Tu rol es: {current_user.role}. <a href='/logout'>Cerrar sesión</a>"
+    return f'''
+        <html>
+        <head>
+            <link rel="stylesheet" href="/static/css/style.css">
+            <title>Dashboard</title>
+        </head>
+        <body>
+            <div class="dashboard">
+                <h1>Hola, {current_user.username}!</h1>
+            <p>Tu rol es: {current_user.role}.</p>
+            <a href="/logout">Cerrar sesión</a>
+        </body>
+        </html>
+    '''
 
 # Ruta de logout
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
-    return "sesión cerrada. <a href='/login'>Iniciar sesión de nuevo</a>"
+    return '''
+        <html>
+        <head>
+            <link rel="stylesheet" href="/static/css/style.css">
+            <title>Logout</title>
+        </head>
+        <body>
+            <div class="logout">
+                <h1>Sesión cerrada</h1>
+                <a href="/login" class="boton">Iniciar sesión de nuevo</a>
+            </div>
+        </body>
+        </html>
+    '''
 
 if __name__ == '__main__':
     app.run(debug=True)
